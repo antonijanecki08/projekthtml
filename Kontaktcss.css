@@ -1,0 +1,211 @@
+* {
+    scroll-behavior: smooth;
+}
+ 
+body {
+    background-color: black;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+}
+ 
+/* -------- NAVIGATION -------- */
+ 
+nav {
+    background-color: rgb(70, 0, 0);
+    display: flex;
+    justify-content: space-between;
+}
+ 
+.tl, .tm, .tr {
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+ 
+.tl {
+    justify-content: flex-start;
+}
+ 
+.tm {
+    justify-content: center;
+}
+ 
+.tr {
+    justify-content: flex-end;
+}
+ 
+ul.menu {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    list-style: none;
+    color: white;
+    font-size: x-large;
+    align-items: center;
+}
+ 
+ul.menu li:hover {
+    color: rgb(201, 183, 44);
+    transition: 0.3s;
+}
+ 
+ul.bok {
+    display: flex;
+    padding: 20px;
+    list-style: none;
+    color: white;
+}
+ 
+ul.logowanie {
+    list-style: none;
+    padding: 0;
+}
+ 
+ul.logowanie li {
+    background-color: white;
+    color: black;
+    padding: 12px 30px;
+    font-size: 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 20px;
+    transition: 0.3s;
+}
+ 
+ul.logowanie li:hover {
+    background-color: rgb(213, 44, 44);
+    color: white;
+    transform: translateY(-3px);
+}
+ 
+#kontakt {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: rgb(70, 0, 0);
+    color: white;
+    padding: 80px 0;
+}
+
+.kontakt-content {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.kontakt-tekst h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.kontakt-tekst p {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+.formularz {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formularz input,
+.formularz textarea {
+    padding: 15px 20px;
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.2);
+    color: white;
+    font-size: 18px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.formularz input:focus,
+.formularz textarea:focus {
+    border-color: rgb(201, 183, 44);
+}
+
+.wyslij {
+    background-color: rgb(201, 183, 44);
+    border: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    color: black;
+}
+
+.wyslij:hover {
+    background-color: white;
+    transform: translateY(-3px);
+}
+
+/* RWD */
+@media (max-width: 768px) {
+    .kontakt-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .formularz {
+        width: 100%;
+    }
+}
+/* -------- FOOTER -------- */
+ 
+footer {
+    background-color: white;
+    color: black;
+}
+ 
+ul.stopka {
+    list-style: none;
+    padding: 40px;
+}
+ 
+/* -------- ANIMATION -------- */
+ 
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+ 
+/* -------- RESPONSIVE DESIGN -------- */
+ 
+@media (max-width: 900px) {
+ 
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+ 
+    .hero img {
+        width: 80%;
+    }
+ 
+    .onas-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+ 
+    .menu-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+ 
+    .oferta1, .oferta2, .oferta3 {
+        width: 100%;
+    }
+}
