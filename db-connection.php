@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
-$dbname = "sklep";
+$dbname = "restauracja";
 $user = "root";
 $pass = "";
 
@@ -12,6 +12,3 @@ try {
 } catch (PDOException $e) {
     die("Błąd połączenia z bazą: " . $e->getMessage());
 }
-
-
- 

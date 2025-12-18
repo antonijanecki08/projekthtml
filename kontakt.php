@@ -1,42 +1,30 @@
 <?php
-<form action= "?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" class="contact-form"
-method= "post">
+require "db-connection.php";
 
-<label for="email">Email: </label>
-<input type="email" name="email" id="email" required placeholder="np. mnowak@gmail.com">
-    <textarea name="" id=""> 
-    
-    </textarea>
-<input type="submit" value="Wyślij wiadomość" name="submit" id="submitMsg">
-
-require "db-connection.php"
 $info = "";
 $infoSuccess = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    // Pobieranie danych z formularza
+    $name = $_POST["name"] ?? "";
     $email = $_POST["email"] ?? "";
     $message = $_POST["message"] ?? "";
 
     try {
-        // Przygotowanie zapytania SQL
-        $sql = "INSERT INTO messages (email, message) VALUES (?, ?)";
-        $stmt = $pdo->prepare($sql);
+        $sql = "INSERT INTO messages (name, email, message)
+                VALUES (?, ?, ?)";
 
-        // Wykonanie zapytania z danymi
-        $stmt->execute([$email, $message]);
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$name, $email, $message]);
 
         $infoSuccess = "Wiadomość została pomyślnie wysłana!";
-
     } catch (PDOException $e) {
         $info = "Coś poszło nie tak: " . $e->getMessage();
     }
 
-    // Zamknięcie połączenia
     $pdo = null;
 }
-?>  
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -58,6 +46,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <?php endif; ?>
 
 <form method="POST" action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>">
+
+    <label for="name">Imię:</label><br>
+    <input type="text" id="name" name="name" placeholder="Podaj imię" required><br><br>
 
     <label for="email">Adres e-mail:</label><br>
     <input type="email" id="email" name="email" placeholder="Podaj swój email" required><br><br>
