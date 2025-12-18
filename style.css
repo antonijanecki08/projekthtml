@@ -1,0 +1,111 @@
+*{ 
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background-color: bisque;
+    margin: 0;
+    font-family: "Montserrat";
+    }
+header{
+    background-color: rgb(32, 9, 15);
+    color: rgb(212, 214, 184);
+    padding: 20px;
+    text-decoration: none;
+
+
+/*komentarz*/
+
+}
+h1{
+    margin: 0;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+}
+ul.menu{ 
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    color: rgb(212, 214, 184);
+    text-decoration: none;
+}
+
+ul.menu li{
+    text-decoration: none;
+    color: rgb(212, 214, 184);
+    list-style: none;
+    
+}
+.hero{
+    background-image: url("https://images.unsplash.com/photo-1760479099297-90f851fb0474?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"); 
+    height: 100vh; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-size: cover;
+    color: white;
+}
+.hero h2{
+    font-size: 40px;
+}
+
+.hero a{ 
+    background-color: chocolate;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    
+}
+
+.hero a:hover{ 
+    background-color: white;
+    color: black;
+    transition: all 1s;
+}
+main{ 
+    width: 80%;
+    margin: auto;
+}
+
+
+section{ 
+    display: flex;
+    padding: 20px;
+    justify-content: space-around;
+    align-items: center !important;
+
+}
+
+img{ 
+    width: 20%;
+    border-radius: 20px;
+}
+
+
+#rodzic{
+    box-shadow: 0 0 10px rgba(0,0, 0, 0.5);
+}
+ul#rodzic>li { 
+    background-color: #fff ;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #0074d9;
+}
+
+
+
+
+       
+
+@media (max-width: 768px) {
+    h3{
+        font-size: 50px;
+    }
+}
